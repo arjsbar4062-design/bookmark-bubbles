@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bookmark Bubbles</title>
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <div id="app">
+    <div class="topbar">
+      <div class="brand">🔮 Bookmark Bubbles</div>
+      <div class="spacer"></div>
+      <div class="role" id="role"></div>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </div>
+
+    <div id="loginView" class="view active">
+      <div class="card bubble">
+        <h1>Login</h1>
+        <p>Select a role and enter its password.</p>
+        <div class="row">
+          <label>Role</label>
+          <select id="roleSelect">
+            <option value="guest">Guest</option>
+            <option value="owner">Owner</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Password</label>
+          <input id="password" type="password" placeholder="••••••••"/>
+        </div>
+        <button id="loginBtn">Enter</button>
+      </div>
+    </div>
+
+    <div id="mainView" class="view">
+      <div class="sidebar bubble">
+        <div class="section">
+          <div class="section-title">Actions</div>
+          <div class="actions">
+            <button id="exportBtn">Export</button>
+            <div id="ownerOnly" class="owner">
+              <label for="importFile" class="filelike">Import JSON</label>
+              <input id="importFile" type="file" accept="application/json"/>
+              <button id="addFolderBtn">+ Folder</button>
+              <button id="addLinkBtn">+ Link</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Request Owner</div>
+          <textarea id="requestMsg" placeholder="Why should you be owner?"></textarea>
+          <button id="requestBtn">Send Request</button>
+        </div>
+
+        <div id="ownerRequests" class="section owner">
+          <div class="section-title">Incoming Requests</div>
+          <div id="requestsList"></div>
+        </div>
+      </div>
+
+      <div class="content bubble">
+        <div class="content-title">Bookmark Tree</div>
+        <div id="tree" class="tree"></div>
+      </div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

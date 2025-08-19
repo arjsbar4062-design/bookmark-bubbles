@@ -1,0 +1,20 @@
+{
+  "name": "bookmark-bubbles",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "seed": "node utils/seed.mjs"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.6.0",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.2",
+    "nanoid": "^5.0.7"
+  }
+}
